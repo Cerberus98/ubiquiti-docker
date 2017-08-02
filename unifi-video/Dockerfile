@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM ubuntu:xenial
 MAINTAINER Antony Messerli "antony@mes.ser.li"
 
 # Must be passed in at build time with --build-arg
