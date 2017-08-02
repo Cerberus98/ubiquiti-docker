@@ -21,7 +21,7 @@ RUN /bin/chmod +x /bin/start.sh
 #  want to keep any of that data around, we want our union mount to
 #  replace /var/lib/unifi so we remove a bunch of dirs at the end
 RUN echo "debconf debconf/frontend select Noninteractive" | debconf-set-selections && \
-    apt-get update \
+    apt-get update && \
     apt-get install -y curl cron procps net-tools vim && \
     curl -L ${UNIFI_DEB_URL} -o /tmp/unifi.deb && \
     dpkg -i /tmp/unifi.deb || /bin/true && apt-get -yf --force-yes install && \
