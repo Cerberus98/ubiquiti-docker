@@ -26,7 +26,7 @@ RUN echo "debconf debconf/frontend select Noninteractive" | debconf-set-selectio
     rm -rf /var/lib/unifi/* /usr/lib/unifi/{data.,logs.,run.}* 
 
 # No reason to expose the MongoDB port 27117 to the outside for most people
-EXPOSE 3478 8080 8443 8843 8880 10001
+EXPOSE 3478/udp 8080 8443 8843 8880 10001
 #EXPOSE 27117
 
 ENV SHELL /bin/bash
