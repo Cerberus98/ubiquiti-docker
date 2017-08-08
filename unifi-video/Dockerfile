@@ -5,14 +5,6 @@ MAINTAINER Antony Messerli "antony@mes.ser.li"
 ARG UNIFI_VIDEO_VERSION
 ARG UNIFI_VIDEO_DEB_URL
 
-# We are installing mongodb 3.2 here so that the wiredtiger storage
-#  engine will get used by default.  Unifi Video starts mongod with 
-#  the --smallfiles option, which is a config that is only relevant 
-#  for mmapv1 storage engine.  We end up with a log that says 
-#  "Detected configuration for non-active storage engine mmapv1 when 
-#  current storage engine is wiredTiger" but it seems to be harmless.  
-#  Still, would be nice to be able to override the mongod options.
-#
 RUN echo "debconf debconf/frontend select Noninteractive" | debconf-set-selections && \
     apt-get update && apt-get install -y vim curl && \
     curl -L ${UNIFI_VIDEO_DEB_URL} -o /tmp/unifi-video.deb && \
