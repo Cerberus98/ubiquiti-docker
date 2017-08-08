@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM debian:stretch
 MAINTAINER Antony Messerli "antony@mes.ser.li"
 
 # Must be passed in at build time with --build-arg
@@ -14,9 +14,7 @@ ARG UNIFI_VIDEO_DEB_URL
 #  Still, would be nice to be able to override the mongod options.
 #
 RUN echo "debconf debconf/frontend select Noninteractive" | debconf-set-selections && \
-    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
-    echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.2.list && \
-    apt-get update && apt-get install -y mongodb-org curl && \
+    apt-get update && apt-get install -y vim curl && \
     curl -L ${UNIFI_VIDEO_DEB_URL} -o /tmp/unifi-video.deb && \
     mkdir -p /var/cache/unifi-video && \
     mkdir -p /var/run/unifi-video && \
