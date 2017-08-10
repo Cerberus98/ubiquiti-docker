@@ -21,7 +21,7 @@ ADD start.sh /bin
 RUN /bin/chmod +x /bin/start.sh
 
 # No reason to expose the MongoDB port 7441 to the outside for most people
-EXPOSE 1935 6666 7080 7443 7445 7446 7447 
+EXPOSE 1935 6666 7080 7442 7445 7446 7447 
 #EXPOSE 7441
 
 ENV SHELL /bin/bash
