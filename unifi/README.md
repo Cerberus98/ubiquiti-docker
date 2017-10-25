@@ -16,7 +16,7 @@ from my system, you'll probably need to change the directory for
 the host volume mount:
 
 ```
-docker run --restart always --name unifi -h unifi -p 8080:8080 -p 8443:8443 -p 8843:8843 -p 8880:8880 -p 3478:3478/udp -p 10001:10001 -d -v /volume1/docker/unifi:/var/lib/unifi antonym/unifi-controller:5.4.19
+docker run --restart always --name unifi -h unifi -p 8080:8080 -p 8443:8443 -p 8843:8843 -p 8880:8880 -p 3478:3478/udp -p 10001:10001 -d -v /volume1/docker/unifi:/var/lib/unifi antonym/unifi-controller:latest
 ```
 If you feel like building the container manually:
 
