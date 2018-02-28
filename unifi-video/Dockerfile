@@ -6,7 +6,7 @@ ARG UNIFI_VIDEO_VERSION
 ARG UNIFI_VIDEO_DEB_URL
 
 RUN echo "debconf debconf/frontend select Noninteractive" | debconf-set-selections && \
-    apt-get update && apt-get install -y net-tools vim curl procps && \
+    apt-get update && apt-get install -y net-tools tzdata vim curl procps && \
     curl -L ${UNIFI_VIDEO_DEB_URL} -o /tmp/unifi-video.deb && \
     mkdir -p /var/cache/unifi-video && \
     mkdir -p /var/run/unifi-video && \
