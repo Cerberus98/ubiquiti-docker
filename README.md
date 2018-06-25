@@ -2,7 +2,7 @@
 
 # ubiquiti-docker
 
-Docker images to work with Ubiquiti Products on a Synology NAS.
+Docker images to work with Ubiquiti Products on a Synology NAS or on a Raspberry Pi 2 or newer!
 
 This repo has been forked from https://github.com/ctindel/ubiquiti-docker.
 Thanks goes to ctindel for spending the time making this.

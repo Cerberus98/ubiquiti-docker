@@ -16,11 +16,11 @@ services:
 before_script: 
 
 script:
-  - bash ./unifi/mock_test.sh
+  - bash ./unifi/x86/mock_test.sh
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - export REPO=$DOCKER_USER/ubiquiti-docker
-  - make -C unifi build
-  - 'if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then make -C unifi release; fi'
+  - make -C unifi/x86 build
+  - 'if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then make -C unifi/x86 release; fi'
   - bash ./unifi-video/mock_test.sh
   - make -C unifi-video build
   - 'if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then make -C unifi-video release; fi'
