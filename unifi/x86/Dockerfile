@@ -21,7 +21,6 @@ RUN echo "debconf debconf/frontend select Noninteractive" | debconf-set-selectio
     curl -L ${UNIFI_DEB_URL} -o /tmp/unifi.deb && \
     dpkg -i /tmp/unifi.deb || /bin/true && apt -yf --force-yes install && \
     /etc/init.d/unifi start && /etc/init.d/unifi stop && \ 
-    dpkg --purge curl && \
     apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     rm -rf /var/lib/unifi/* /usr/lib/unifi/{data.,logs.,run.}* 
 

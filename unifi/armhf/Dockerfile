@@ -32,7 +32,6 @@ RUN curl -L ${UNIFI_DEB_URL} -o /tmp/unifi.deb
 RUN apt-get install -yf -t stretch-backports ca-certificates-java jsvc libcap2 default-jre && \
     dpkg -i /tmp/unifi.deb || /bin/true && apt -yf install && \
     /etc/init.d/unifi start && /etc/init.d/unifi stop && \
-    dpkg --purge curl && \
     apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     rm -rf /var/lib/unifi/* /usr/lib/unifi/{data.,logs.,run.}*
 
