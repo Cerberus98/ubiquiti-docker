@@ -1,5 +1,5 @@
 NAME = antonym/unifi-controller
-VERSION = 5.9.32-016da0b7c1
+VERSION = 5.10.11-6e1800b9b9
 UNIFI_DEB_URL=https://dl.ubnt.com/unifi/$(VERSION)/unifi_sysvinit_all.deb
 
 .PHONY: all build test tag_latest release
