@@ -1,6 +1,6 @@
 NAME = antonym/unifi-video-controller
 VERSION = v3.10.0
-UNIFI_VIDEO_DEB_URL=https://dl.ubnt.com/firmwares/ufv/$(VERSION)/unifi-video.Debian7_amd64.$(VERSION).deb
+UNIFI_VIDEO_DEB_URL=https://dl.ubnt.com/firmwares/unifi-video/$(VERSION)/unifi-video.Debian7_amd64.$(VERSION).deb
 .PHONY: all build test tag_latest release
 
 all: build
